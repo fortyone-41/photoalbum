@@ -1,27 +1,21 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-import ReactDOM from 'react-dom'
 
 const Photo = ({ photos, albumId }) => {
-    let history = useHistory();
     const ref = React.useRef(null);
-    const focus = (id,count) => {
+    const focus = (id, count) => {
         let range = 622;
         ref.current.scrollTo(0, id % count * range)
     }
     let counter = 0;
 
-
     return (
         <>
-
             {photos.map((photo, index) => {
                 if (photo.albumId === albumId) {
                     counter++;
-                    return <span onClick={() => focus(index,counter)}><a href={"#modal"}><img id="link" className="image" src={photo.thumbnailUrl} title={photo.title} alt={photo.title} /></a></span>
+                    return <span onClick={() => focus(index, counter)}><a href={"#modal"}><img id="link" className="image" src={photo.thumbnailUrl} title={photo.title} alt={photo.title} /></a></span>
                 }
             })}
-
             <section id="modal" ref={ref} className="modal-window">
                 <div className="modal-content">
                     {photos.map(photo => {

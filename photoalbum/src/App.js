@@ -17,9 +17,7 @@ function App() {
       <BrowserRouter>
         <div className="users">
           <h3>Users:</h3>
-
           <div className="links">
-
             {users.map((user) => (<NavLink to={"/" + user.id} key={user.id}>{user.name}</NavLink>))}
           </div>
         </div>

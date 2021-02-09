@@ -7,11 +7,10 @@ const User = ({users}) => {
     const [photos, setPhotos] = React.useState([])
     React.useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/albums').then(res => res.json()).then(data => setAlbums(data))
-        fetch('https://jsonplaceholder.typicode.com/photos').then(res => res.json()).then(data => setTimeout(() => {setPhotos(data)},0))
+        fetch('https://jsonplaceholder.typicode.com/photos').then(res => res.json()).then(data => setPhotos(data))
     },[])
     return (
-            <div className="albums">
-                
+            <div className="albums">       
                 {users.map((user) => <Route path={"/"+user.id} render={(props) => <Album  userId={user.id} albums={albums} photos={photos} />} key={user.id}  />)}
             </div>
     );
