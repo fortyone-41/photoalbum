@@ -1,0 +1,88 @@
+.users {
+  box-shadow: inset 0 0 0 7px rgba(255,255,255,.5);
+  border: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color:rgb(226, 224, 221);
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.albums {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.album {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: rgba(236, 232, 214, 0.808);
+  box-shadow: inset 0 0 0 7px rgba(255,255,255,.5);
+}
+
+.album p{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.album img {
+  height: 64px;
+}
+
+.gallery {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: cyan;
+  box-shadow: inset 0 0 0 7px rgba(255,255,255,.5);
+}
+
+.image {
+  height: 80px;
+  padding: 1px;
+}
+
+.image-full {
+  height: 100%;
+  padding: 1px;
+}
+
+.modal-window {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 9999;
+  overflow: auto;
+  position: fixed;
+  visibility: hidden;
+  background: rgba(14, 14, 14, 0.8);
+  margin-top: -250px;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+.modal-content {
+
+  padding: 25px;
+  text-align: center;
+}
+
+.modal-window:target {
+  opacity: 1;
+  margin-top: 0px;
+  visibility: visible;
+}
+
+#link:hover {
+  opacity: 0.7;
+}
